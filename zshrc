@@ -32,7 +32,7 @@ export LC_CTYPE=$LANG
 alias ls="ls -G"
 source ~/.zsh/git-prompt/zshrc.sh
 
-PROMPT='%B%~%b$(git_super_status) %# '
+PROMPT='%B%~%b$(git_super_status) $VIMODE %# '
 
 setopt prompt_subst
 
@@ -166,3 +166,11 @@ function _git_log_prettily(){
 alias glp="_git_log_prettily"
 compdef _git glp=git-log
 
+# set VIMODE according to the current mode (default “[i]”)
+VIMODE='[i]'
+function zle-keymap-select {
+  VIMODE="${${KEYMAP/vicmd/[n]}/(main|viins)/[i]}"
+  zle reset-prompt
+}
+
+zle -N zle-keymap-select
