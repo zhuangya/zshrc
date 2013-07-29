@@ -4,7 +4,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 setopt appendhistory extendedglob
 unsetopt beep
-bindkey -v
+bindkey -M
 bindkey "^R" history-incremental-pattern-search-backward 
 bindkey "^S" history-incremental-pattern-search-forward 
 
@@ -32,7 +32,7 @@ export LC_CTYPE=$LANG
 alias ls="ls -G"
 source ~/.zsh/git-prompt/zshrc.sh
 
-PROMPT='%B%~%b$(git_super_status) $VIMODE %# '
+PROMPT='%B%~%b$(git_super_status) %# '
 
 setopt prompt_subst
 
@@ -166,18 +166,11 @@ function _git_log_prettily(){
 alias glp="_git_log_prettily"
 compdef _git glp=git-log
 
-# set VIMODE according to the current mode (default “[i]”)
-VIMODE='[i]'
-function zle-keymap-select {
-  VIMODE="${${KEYMAP/vicmd/[n]}/(main|viins)/[i]}"
-  zle reset-prompt
-}
-
 zle -N zle-keymap-select
 
 #path
 typeset -U path
-path=(/usr/local/share/npm/bin /usr/bin /bin /usr/sbin /sbin /usr/local/bin $path)
+path=(/usr/local/share/npm/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin /usr/local/bin $path)
 
 #rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
