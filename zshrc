@@ -178,3 +178,7 @@ zle -N zle-keymap-select
 #path
 typeset -U path
 path=(/usr/local/share/npm/bin /usr/bin /bin /usr/sbin /sbin /usr/local/bin $path)
+
+#rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
