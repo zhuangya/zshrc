@@ -5,6 +5,10 @@ SAVEHIST=100000
 setopt appendhistory extendedglob
 unsetopt beep
 bindkey -v
+bindkey "^R" history-incremental-pattern-search-backward
+bindkey "^S" history-incremental-pattern-search-forward
+
+
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/Users/zy/.zshrc'
