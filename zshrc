@@ -4,7 +4,7 @@ HISTSIZE=100000
 SAVEHIST=100000
 setopt appendhistory extendedglob
 unsetopt beep
-bindkey -M
+bindkey -e
 bindkey "^R" history-incremental-pattern-search-backward 
 bindkey "^S" history-incremental-pattern-search-forward 
 
