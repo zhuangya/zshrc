@@ -5,8 +5,8 @@ SAVEHIST=100000
 setopt appendhistory extendedglob
 unsetopt beep
 bindkey -v
-bindkey "^R" history-incremental-pattern-search-backward
-bindkey "^S" history-incremental-pattern-search-forward
+bindkey "^R" history-incremental-pattern-search-backward 
+bindkey "^S" history-incremental-pattern-search-forward 
 
 
 # End of lines configured by zsh-newuser-install
@@ -15,6 +15,12 @@ zstyle :compinstall filename '/Users/zy/.zshrc'
 
 autoload -Uz compinit
 compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+zstyle ':completion:*' completer _expand _complete _ignored _approximate
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*' select-prompt '%SScrolling active: current selection at %p%s'
+zstyle ':completion::complete:*' user-cache 1
+zstyle ':completion:*descriptions' format '%U%F{cyan}%d%f%u'
 # End of lines added by compinstall
 
 autoload -U url-quote-magic
