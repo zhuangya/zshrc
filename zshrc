@@ -32,7 +32,10 @@ export LC_CTYPE=$LANG
 alias ls="ls -G"
 source ~/.zsh/git-prompt/zshrc.sh
 
-PROMPT='%B%~%b$(git_super_status) %# '
+autoload -U colors && colors
+
+PROMPT='%{$fg[red]%}%B%n%{$reset_color%}%{$fg[blue]%}@%m%~%{$reset_color%}%b$(git_super_status) %# '
+
 
 setopt prompt_subst
 
