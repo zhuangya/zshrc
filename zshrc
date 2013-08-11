@@ -5,8 +5,8 @@ SAVEHIST=100000
 setopt appendhistory extendedglob
 unsetopt beep
 bindkey -e
-bindkey "^R" history-incremental-pattern-search-backward 
-bindkey "^S" history-incremental-pattern-search-forward 
+bindkey "^R" history-incremental-pattern-search-backward
+bindkey "^S" history-incremental-pattern-search-forward
 
 
 # End of lines configured by zsh-newuser-install
