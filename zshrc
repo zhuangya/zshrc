@@ -171,9 +171,12 @@ compdef _git glp=git-log
 
 zle -N zle-keymap-select
 
+#go
+export GOPATH=/usr/local/share/go
+
 #path
 typeset -U path
-path=(/usr/local/share/npm/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin /usr/local/bin $path)
+path=($GOPATH/bin /usr/local/bin /usr/local/share/npm/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin $path)
 
 #rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
