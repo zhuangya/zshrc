@@ -23,7 +23,7 @@ zstyle ':completion::complete:*' user-cache 1
 zstyle ':completion:*descriptions' format '%U%F{cyan}%d%f%u'
 # End of lines added by compinstall
 
-autoload edit-command-line
+autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^Xe' edit-command-line
 bindkey '^X^e' edit-command-line
@@ -36,6 +36,11 @@ export LC_CTYPE=$LANG
 
 alias ls="ls -G"
 source ~/.zsh/git-prompt/zshrc.sh
+
+# cat with syntax support
+# install `(sudo) easy_install Pygments`
+
+alias cat="pygmentize -g"
 
 autoload -U colors && colors
 
