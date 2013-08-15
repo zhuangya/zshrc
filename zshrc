@@ -23,6 +23,11 @@ zstyle ':completion::complete:*' user-cache 1
 zstyle ':completion:*descriptions' format '%U%F{cyan}%d%f%u'
 # End of lines added by compinstall
 
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^Xe' edit-command-line
+bindkey '^X^e' edit-command-line
+
 autoload -U url-quote-magic
 zle -N self-insert url-quote-magic
 
