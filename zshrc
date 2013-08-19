@@ -188,6 +188,12 @@ export GOPATH=/usr/local/share/go
 typeset -U path
 path=($GOPATH/bin /usr/local/bin /usr/local/share/npm/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin $path)
 
+#zsh-completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+#zsh-syntax-highlighting
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 #rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
