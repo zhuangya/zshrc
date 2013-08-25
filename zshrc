@@ -37,10 +37,10 @@ export LC_CTYPE=$LANG
 alias ls="ls -G"
 source ~/.zsh/git-prompt/zshrc.sh
 
-# cat with syntax support
+# scat with syntax support
 # install `(sudo) easy_install Pygments`
 
-alias cat="pygmentize -g"
+alias scat="pygmentize -g"
 
 autoload -U colors && colors
 
